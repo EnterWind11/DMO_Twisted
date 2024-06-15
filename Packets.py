@@ -76,19 +76,3 @@ class Packet:
         value = struct.unpack_from(f'{length}s', self.buffer, self.read_pos)[0].decode('utf-8')
         self.read_pos += struct.calcsize(f'{length}s')
         return value
-
-
-# Example usage
-#packet = Packet()
-#packet.write_int(123)
-#packet.write_float(3.14)
-#packet.write_string("Hello, World!")
-
-#data = packet.get_data()
-
-# Reading back the data
-#packet2 = Packet()
-#packet2.buffer = data
-#print(packet2.read_int())  # 123
-#print(packet2.read_float())  # 3.14
-#print(packet2.read_string())  # Hello, World!
